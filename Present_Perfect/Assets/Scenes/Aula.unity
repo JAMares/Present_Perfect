@@ -2134,7 +2134,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 2
-  far clip plane: 40
+  far clip plane: 15
   field of view: 34
   orthographic: 0
   orthographic size: 5
@@ -2160,14 +2160,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387205807}
-  m_LocalRotation: {x: 0.003303064, y: -0.9385917, z: -0.006924119, w: -0.34494478}
+  m_LocalRotation: {x: -0.00076290214, y: -0.9814948, z: -0.007633579, w: 0.19133548}
   m_LocalPosition: {x: 9.36, y: 2.7, z: 25.179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 162455060}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0.875, y: -220.357, z: -0.082}
+  m_LocalEulerAnglesHint: {x: -0.875, y: -157.937, z: -0.082}
 --- !u!114 &387205811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2492,7 +2492,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19368
+  m_Name: pb_Mesh35194
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2796,7 +2796,6 @@ GameObject:
   - component: {fileID: 507087584}
   - component: {fileID: 507087583}
   - component: {fileID: 507087582}
-  - component: {fileID: 507087585}
   m_Layer: 5
   m_Name: Description-Pos
   m_TagString: Untagged
@@ -2885,20 +2884,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &507087585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 507087580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3ed3167c4765744d823fb70d8826fd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explanaxion: {fileID: 2024513091}
-  background: {fileID: 2089570184}
 --- !u!43 &516048396
 Mesh:
   m_ObjectHideFlags: 0
@@ -30066,7 +30051,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9fbd0b316e31e0d47a9e1a63fe5e8b99, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0.08
   m_Pitch: 1
   Loop: 1
