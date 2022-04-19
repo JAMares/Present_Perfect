@@ -8,7 +8,7 @@ using System.Collections.Generic;
 /// </summary>
 public class CameraPointerMenu : MonoBehaviour
 {
-    private const float _maxDistance = 600.0f;
+    private const float _maxDistance = 800.0f;
     private GameObject _gazedAtObject = null;
     public float tiempoclick=2.0f;
     private float tiempotrasncurrido = 0.0f;
