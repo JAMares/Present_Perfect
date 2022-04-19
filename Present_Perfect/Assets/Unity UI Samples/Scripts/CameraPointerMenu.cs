@@ -1,14 +1,14 @@
-using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 /// <summary>
 /// Sends messages to gazed GameObject.
 /// </summary>
 public class CameraPointerMenu : MonoBehaviour
 {
-    private const float _maxDistance = 50.0f;
+    private const float _maxDistance = 600.0f;
     private GameObject _gazedAtObject = null;
     public float tiempoclick=2.0f;
     private float tiempotrasncurrido = 0.0f;
@@ -24,10 +24,10 @@ public class CameraPointerMenu : MonoBehaviour
 
 
         // Checks for screen touches.
-        //if (Google.XR.Cardboard.Api.IsTriggerPressed)
-       // {
-         //   _gazedAtObject?.SendMessage("OnPointerClick");
-        //}
+        if (Google.XR.Cardboard.Api.IsTriggerPressed)
+        {
+            _gazedAtObject?.SendMessage("OnPointerClick");
+        }
     }
 
     void DispararRayo()
@@ -46,46 +46,17 @@ public class CameraPointerMenu : MonoBehaviour
             if ((_gazedAtObject != hit.transform.gameObject) && tiempotrasncurrido >= tiempoclick)
             {
 
-                if (hit.transform.name == "ButtonLevel0")
+                if (hit.transform.name == "ButtonExit")
                 {
-                    _gazedAtObject?.SendMessage("OnPointerMenuL0Exit");
+                    _gazedAtObject?.SendMessage("Quit");
                     _gazedAtObject = hit.transform.gameObject;
-                    _gazedAtObject.SendMessage("OnPointerMenuL0Enter");
                 }
 
-                if (hit.transform.name == "ButtonQuit")
+                if (hit.transform.name == "ButtonPlay")
                 {
 
-                    _gazedAtObject?.SendMessage("OnPointerMenuQExit");
+                    _gazedAtObject?.SendMessage("CargarAula");
                     _gazedAtObject = hit.transform.gameObject;
-                    _gazedAtObject.SendMessage("OnPointerMenuQEnter");
-                }
-
-                if (hit.transform.name == "ButtonLevel1")
-                {
-
-                    _gazedAtObject?.SendMessage("OnPointerMenuL1Exit");
-                    _gazedAtObject = hit.transform.gameObject;
-                    _gazedAtObject.SendMessage("OnPointerMenuL1Enter");
-                }
-
-                // New GameObject.
-                /*  _gazedAtObject?.SendMessage("OnPointerExit");
-                  _gazedAtObject = hit.transform.gameObject;
-                  _gazedAtObject.SendMessage("OnPointerEnter");
-                  */
-                if (hit.transform.tag == "Menu")
-                {
-                    _gazedAtObject?.SendMessage("DetenerAnimacionExit");
-                    _gazedAtObject = hit.transform.gameObject;
-                    _gazedAtObject.SendMessage("DetenerAnimacion");
-                }
-
-                 if (hit.transform.tag == "teleport")
-                {
-                    _gazedAtObject?.SendMessage("DetenerAnimacionExit");
-                    _gazedAtObject = hit.transform.gameObject;
-                    _gazedAtObject.SendMessage("DetenerAnimacion");
                 }
 
                 tiempotrasncurrido = 0.0f;
@@ -95,14 +66,10 @@ public class CameraPointerMenu : MonoBehaviour
         }
         else
         {
-            // No GameObject detected in front of the camera.
-            //_gazedAtObject?.SendMessage("OnPointerExit");
             _gazedAtObject?.SendMessage("CargarAnimacion");
             _gazedAtObject = null;
             puntero.fillAmount = 0.0f;
 
         }
     }
-
-    
 }
