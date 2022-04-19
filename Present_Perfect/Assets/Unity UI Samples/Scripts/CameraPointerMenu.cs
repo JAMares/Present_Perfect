@@ -24,10 +24,10 @@ public class CameraPointerMenu : MonoBehaviour
 
 
         // Checks for screen touches.
-        if (Google.XR.Cardboard.Api.IsTriggerPressed)
-        {
-            _gazedAtObject?.SendMessage("OnPointerClick");
-        }
+        //if (Google.XR.Cardboard.Api.IsTriggerPressed)
+       // {
+         //   _gazedAtObject?.SendMessage("OnPointerClick");
+        //}
     }
 
     void DispararRayo()
